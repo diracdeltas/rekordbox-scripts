@@ -42,3 +42,16 @@ instructions in next section).
 3. choose `Preferences`, `View`, and then check `rekordbox xml` in `Layout`.
 4. rekordbox xml appears in your browser window. expand and click `All Tracks`
 5. select the track(s) that you want to import and right click and select `Import to Collection`.
+
+## related tools
+
+https://github.com/rougetimelord/keypad by
+[@\_caffeinu](https://twitter.com/_caffeinu) 0-pads Camelot keys so that CDJs
+sort by key correctly.
+
+## support
+
+if you encounter a bug or have a feature request, open an
+[issue](https://github.com/diracdeltas/rekordbox-scripts/issues) or DM me on
+[soundcloud](https://soundcloud.com/azuki)
+/ [twitter](https://twitter.com/bcrypt).
