@@ -10,11 +10,16 @@ root = tree.getroot()
 
 for track in root.findall('./COLLECTION/TRACK'):
     for position in track.findall('POSITION_MARK'):
-        child = ET.Element('POSITION_MARK')
-        child.set('Name', '')
-        child.set('Type', '0')
-        child.set('Num', '-1')
-        child.set('Start', position.get('Start'))
-        track.append(child)
+        start = position.get('Start')
+        # don't create duplicate mem cues
+        if track.findall('./POSITION_MARK[@Num="-1"][@Start="' + start + '"]'):
+            print('skipping: ' + track.get('Name'))
+        else:
+            child = ET.Element('POSITION_MARK')
+            child.set('Name', '')
+            child.set('Type', '0')
+            child.set('Num', '-1')
+            child.set('Start', start)
+            track.append(child)
 
 tree.write('output.xml')
