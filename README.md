@@ -32,6 +32,7 @@ instructions in next section).
   that vbr encoded tracks may show a bitrate of 0. the bitrate is configurable;
   for instance you can run `python3 show-low-bitrate.py input.xml 256` to set
   the threshold to 256kbps.
+* `show-dups.py`: shows tracks with the same title
 
 ### importing the modified collection back into Rekordbox
 
