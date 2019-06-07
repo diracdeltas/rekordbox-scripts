@@ -28,9 +28,9 @@ instructions in next section).
 
 * `hotcues-to-memory-cues.py` [M]: replicates all hot cues as memory cues. it
   does not delete any existing hot cues or memory cues.
-* `remove-low-bitrate.py`: shows tracks with less than a given bitrate. note
+* `show-low-bitrate.py`: shows tracks with less than a given bitrate. note
   that vbr encoded tracks may show a bitrate of 0. the bitrate is configurable;
-  for instance you can run `python3 remove-low-bitrate.py input.xml 256` to set
+  for instance you can run `python3 show-low-bitrate.py input.xml 256` to set
   the threshold to 256kbps.
 
 ### importing the modified collection back into Rekordbox
