@@ -34,6 +34,9 @@ instructions in next section).
   for instance you can run `python3 show-low-bitrate.py input.xml 256` to set
   the threshold to 256kbps.
 * `show-dups.py`: shows tracks with the same title
+* `show-non-mp3.py`: shows tracks that are not mp3
+* `ableton-to-cues.py [M]`: takes warp markers from an ALS file and converts them
+  into hotcues and memcues in rekordbox.
 
 ### importing the modified collection back into Rekordbox
 
