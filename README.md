@@ -1,7 +1,13 @@
 # rekordbox scripts
 
-a collection of scripts to help me organize and prep my music collection in
+a collection of scripts to help organize and prep music collections in
 rekordbox.
+
+## demo/tutorial
+
+click below for a video walkthrough of me using the most complicated script in this repo to convert all the warp markers in an ableton DJ set to cue points in rekordbox (both memory and hot cues).
+
+[![demo](https://img.youtube.com/vi/pKQNfJXWcD0/0.jpg)](https://www.youtube.com/watch?v=pKQNfJXWcD0)
 
 ## prereqs
 
@@ -16,7 +22,7 @@ in Rekordbox select `File` and then `Export Collection in xml format`.
 
 ### running
 
-run `python3 <script> <path_to_exported_XML>` where `<script>` is the script you
+unless otherwise specified, run `python3 <script> <path_to_exported_XML>` where `<script>` is the script you
 want to run and `<path_to_exported_XML>` is the path to the exported Rekordbox
 XML. for instance `python3 hotcues-to-memory-cues.py ~/Rekordbox.xml`.
 
@@ -36,7 +42,9 @@ instructions in next section).
 * `show-dups.py`: shows tracks with the same title
 * `show-non-mp3.py`: shows tracks that are not mp3
 * `ableton-to-cues.py [M]`: takes warp markers from an ALS file and converts them
-  into hotcues and memcues in rekordbox.
+  into hotcues and memcues in rekordbox. this script must be called with the
+  ableton file as the first argument; for instance `python3 ableton-to-cues.py
+  myset.als ~/Rekordbox.xml`
 
 ### importing the modified collection back into Rekordbox
 
