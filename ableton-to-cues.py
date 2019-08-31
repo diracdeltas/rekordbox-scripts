@@ -9,7 +9,7 @@ from urllib.parse import unquote
 
 def als_to_tracks(filename):
     etree = ET.parse(gzip.GzipFile(filename))
-    tracks = etree.getroot().findall('./LiveSet/Tracks/AudioTrack')
+    tracks = etree.getroot().findall('.//AudioClip')
     print(f'Found {len(tracks)} audio tracks')
     return tracks
 
