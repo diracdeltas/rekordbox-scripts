@@ -44,7 +44,8 @@ instructions in next section).
 * `ableton-to-cues.py [M]`: takes warp markers from an ALS file and converts them
   into hotcues and memcues in rekordbox. this script must be called with the
   ableton file as the first argument; for instance `python3 ableton-to-cues.py
-  myset.als ~/Rekordbox.xml`
+  myset.als ~/Rekordbox.xml`. use the `--reverse true` option to instead
+  convert Rekordbox cues to Ableton warp markers.
 
 ### importing the modified collection back into Rekordbox
 
