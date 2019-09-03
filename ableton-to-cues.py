@@ -109,10 +109,16 @@ else:
                 num = 2
                 # get rekordbox bpm
                 bpm = float(rekordbox_track.find('./TEMPO').get('Bpm'))
+                time = None
                 for element in rekordbox_track.findall('./POSITION_MARK'):
                     time = element.get('Start')
                     marker = get_warp_marker(time, num, bpm)
                     num = num + 1
+                    child.append(marker)
+                # append the last marker a 2nd time; for some reason this seems
+                # needed otherwise it doesn't show up in ableton.
+                if time:
+                    marker = get_warp_marker(str(float(time) + 0.1), num, bpm)
                     child.append(marker)
                 # attach the new WarpMarkers group
                 track.append(child)
