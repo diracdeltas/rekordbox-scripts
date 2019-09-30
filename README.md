@@ -55,6 +55,10 @@ instructions in next section).
 4. rekordbox xml appears in your browser window. expand and click `All Tracks`
 5. select the track(s) that you want to import and right click and select `Import to Collection`.
 
+Note: I found that sometimes when importing Ableton cues into rekordbox, the
+cues don't show up until after I delete the original tracks from the rekordbox
+collection.
+
 ## related tools
 
 https://github.com/rougetimelord/keypad by
