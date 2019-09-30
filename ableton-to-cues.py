@@ -21,12 +21,19 @@ parser.add_argument(
 args = parser.parse_args()
 
 
+def normalize_time(time):
+    if time == "0":
+        return "0.001"
+    else:
+        return "{0:.3f}".format(float(time))
+
+
 def get_memcue(time):
     child = ET.Element('POSITION_MARK')
     child.set('Name', '')
     child.set('Type', '0')
     child.set('Num', '-1')
-    child.set('Start', time)
+    child.set('Start', normalize_time(time))
     return child
 
 
@@ -38,7 +45,7 @@ def get_hotcue(time, num):
     child.set('Green', '226')
     child.set('Blue', '20')
     child.set('Num', str(num))
-    child.set('Start', time)
+    child.set('Start', normalize_time(time))
     return child
 
 
@@ -90,7 +97,7 @@ if not args.reverse:
                     num = num + 1
                     rekordbox_track.append(hotcue)
                     rekordbox_track.append(memcue)
-    rekordbox_tree.write(outfile)
+    rekordbox_tree.write(outfile, encoding='UTF-8', xml_declaration=True)
 else:
     outfile = 'output.als'
     print('Converting Rekordbox cues to Ableton warp markers.')
