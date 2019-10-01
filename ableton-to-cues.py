@@ -22,10 +22,10 @@ args = parser.parse_args()
 
 
 def normalize_time(time):
-    if time == "0":
+    if time == 0:
         return "0.001"
     else:
-        return "{0:.3f}".format(float(time))
+        return "{0:.3f}".format(time)
 
 
 def get_memcue(time):
@@ -80,7 +80,7 @@ if not args.reverse:
     print('Converting Ableton warp markers to Rekordbox cues.')
     for track in tracks:
         filename = get_ableton_filename(track)
-        warp_markers = track.findall('.//WarpMarker')
+        warp_markers = track.findall('.//WarpMarkers/WarpMarker')
         # Find the corresponding track in rekordbox
         for rekordbox_track in rekordbox_tracks:
             if (get_rekordbox_filename(rekordbox_track) == filename):
@@ -90,8 +90,11 @@ if not args.reverse:
                     rekordbox_track.remove(element)
                 # create a hotcue and mem cue for each warp marker
                 num = 0
-                for marker in warp_markers:
-                    time = marker.get('SecTime')
+                times = [float(marker.get('SecTime')) for marker in warp_markers]
+                times.sort()
+                # ignore last item cuz it gets duplicated for some reason
+                del times[-1]
+                for time in times:
                     hotcue = get_hotcue(time, num)
                     memcue = get_memcue(time)
                     num = num + 1
