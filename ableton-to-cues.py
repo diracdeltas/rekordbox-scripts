@@ -100,6 +100,11 @@ if not args.reverse:
                     num = num + 1
                     rekordbox_track.append(hotcue)
                     rekordbox_track.append(memcue)
+                # set the rekordbox grid to line up with the first cue
+                grid_start = normalize_time(times[0])
+                tempo_start = rekordbox_track.find('./TEMPO')
+                tempo_start.set('Inizio', grid_start)
+                tempo_start.set('Battito', "1")
     rekordbox_tree.write(outfile, encoding='UTF-8', xml_declaration=True)
 else:
     outfile = 'output.als'
