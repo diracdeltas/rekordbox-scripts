@@ -15,6 +15,7 @@ for track in root.findall('./COLLECTION/TRACK'):
         if track.findall('./POSITION_MARK[@Num="-1"][@Start="' + start + '"]'):
             print('skipping: ' + track.get('Name'))
         else:
+            print('processing: ' + track.get('Name'))
             child = ET.Element('POSITION_MARK')
             child.set('Name', '')
             child.set('Type', '0')
@@ -22,4 +23,4 @@ for track in root.findall('./COLLECTION/TRACK'):
             child.set('Start', start)
             track.append(child)
 
-tree.write('output.xml')
+tree.write('output.xml', encoding='UTF-8', xml_declaration=True)
