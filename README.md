@@ -18,7 +18,8 @@ click below for a video walkthrough of me using the most complicated script in t
 
 ### exporting your rekordbox collection as XML
 
-in Rekordbox select `File` and then `Export Collection in xml format`.
+in Rekordbox select `File` and then `Export Collection in xml format`. it will
+create an XML file.
 
 ### running
 
@@ -34,6 +35,7 @@ instructions in next section).
 
 * `hotcues-to-memory-cues.py [M]`: replicates all hot cues as memory cues. it
   does not delete any existing hot cues or memory cues.
+* `memory-cues-to-hotcues.py [M]`: same as above but in reverse
 * `show-low-bitrate.py`: shows tracks with less than a given bitrate; default
   is 320kbps. note that vbr encoded tracks may show a bitrate of 0.
   the bitrate is configurable;
